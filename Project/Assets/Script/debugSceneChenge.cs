@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
+#pragma warning disable CS0618
+
 public class debugSceneChenge : MonoBehaviour {
 
 	// メンバ変数
