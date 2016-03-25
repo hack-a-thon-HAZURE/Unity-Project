@@ -6,10 +6,14 @@ public class Shield : MonoBehaviour
     public int DeffenceNum;       // 現在のシールドの耐久度
     public int MaxDeffenceNum;    // 最大のシールド耐久度
 
+    public Texture[] Textures;
+
     // Use this for initialization
     void Start()
     {
         DeffenceNum = MaxDeffenceNum;
+
+        this.gameObject.GetComponent<Material>().mainTexture = Textures[0];
     }
 
     // Update is called once per frame
@@ -27,6 +31,16 @@ public class Shield : MonoBehaviour
         Debug.Log("Shield Ball");
 
         DeffenceNum--;
+
+        if (DeffenceNum < MaxDeffenceNum)
+        {
+            this.gameObject.GetComponent<Material>().mainTexture = Textures[1];
+        }
+
+        if (DeffenceNum <= 1)
+        {
+            this.gameObject.GetComponent<Material>().mainTexture = Textures[2];
+        }
 
         if (DeffenceNum <= 0)
         {
