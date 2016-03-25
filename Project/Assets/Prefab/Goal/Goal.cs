@@ -38,8 +38,9 @@ public class Goal : MonoBehaviour
     }
 
     // 弾とゴールの接触判定
-    void OnCollisionEnter(Collision Col)
+    void OnTriggerEnter(Collider Col)
     {
+        if (Col.gameObject.tag != "Ball") return;
         Debug.Log("Goal");
 
         _GameRuleManager.DoneGoal(OwnerID, Col.gameObject);
