@@ -1372,7 +1372,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EvolutionCount: 0
-  MaxEvolutionCount: 2
+  MaxEvolutionCount: 3
 --- !u!4 &2139716215
 Transform:
   m_ObjectHideFlags: 0
