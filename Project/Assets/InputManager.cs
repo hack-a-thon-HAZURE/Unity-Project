@@ -31,6 +31,13 @@ public class InputManager : MonoBehaviour
     {
         PlayerOneVirtualKey = 0;
         PlayerTwoVirtualKey = 0;
+
+        // エディター外ではマウスカーソルを消す
+#if UNITY_EDITOR
+        Cursor.visible = true;
+#else
+        Cursor.visible = false;
+#endif
     }
 
     /// <summary>
@@ -47,6 +54,11 @@ public class InputManager : MonoBehaviour
     /// </summary>
     void Update () 
     {
+        if ( Input.GetKey(KeyCode.Escape) )
+        {
+            Application.Quit();
+        }
+
         // 1P操作
         {
             Vector3 Pos = PlayerOne.transform.position;
