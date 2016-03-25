@@ -11,7 +11,8 @@ public class Goal : MonoBehaviour
 {
     public int OwnerID;
 
-    private GameRuleManager _GameRuleManager;
+    private GameRuleManager  _GameRuleManager;
+    private EvolutionManager _EvolutionManager;
 
     /// <summary>
     /// Awake is called when the script instance is being loaded.
@@ -26,7 +27,8 @@ public class Goal : MonoBehaviour
     /// </summary>
     void Start () 
     {
-        _GameRuleManager = GameObject.Find("/GameRuleManager").GetComponent<GameRuleManager>();
+        _GameRuleManager  = GameObject.Find("/GameRuleManager").GetComponent<GameRuleManager>();
+        _EvolutionManager = GameObject.Find("EvolutionManager").GetComponent<EvolutionManager>();
     }
 
     /// <summary>
@@ -43,6 +45,8 @@ public class Goal : MonoBehaviour
         Debug.Log("Goal");
 
         _GameRuleManager.DoneGoal(OwnerID, Col.gameObject);
+
+        _EvolutionManager.ResetCount();
     }
 }
 
