@@ -136,6 +136,22 @@ Prefab:
       propertyPath: m_CollisionDetection
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6591488, guid: 606eb9ef9d1578049b09c3d14406cbea, type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6591488, guid: 606eb9ef9d1578049b09c3d14406cbea, type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 188246, guid: 606eb9ef9d1578049b09c3d14406cbea, type: 2}
+      propertyPath: m_TagString
+      value: Hit Ball
+      objectReference: {fileID: 0}
+    - target: {fileID: 188246, guid: 606eb9ef9d1578049b09c3d14406cbea, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 606eb9ef9d1578049b09c3d14406cbea, type: 2}
   m_IsPrefabParent: 0
@@ -191,7 +207,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 75803473}
   - 33: {fileID: 75803472}
-  - 65: {fileID: 75803471}
   - 23: {fileID: 75803470}
   m_Layer: 0
   m_Name: Net
@@ -226,18 +241,6 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!65 &75803471
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 75803469}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &75803472
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -266,7 +269,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 434646, guid: d2ad870d73915064ea9dc0dc7f98c451, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -9
+      value: -11.39
       objectReference: {fileID: 0}
     - target: {fileID: 434646, guid: d2ad870d73915064ea9dc0dc7f98c451, type: 2}
       propertyPath: m_LocalPosition.y
@@ -300,11 +303,24 @@ Prefab:
       propertyPath: m_Name
       value: GoalOne
       objectReference: {fileID: 0}
-    - target: {fileID: 140928, guid: d2ad870d73915064ea9dc0dc7f98c451, type: 2}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
+    - target: {fileID: 6500966, guid: d2ad870d73915064ea9dc0dc7f98c451, type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 434646, guid: d2ad870d73915064ea9dc0dc7f98c451, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 5.770195
+      objectReference: {fileID: 0}
+    - target: {fileID: 140928, guid: d2ad870d73915064ea9dc0dc7f98c451, type: 2}
+      propertyPath: m_TagString
+      value: Goal
+      objectReference: {fileID: 0}
+    - target: {fileID: 140928, guid: d2ad870d73915064ea9dc0dc7f98c451, type: 2}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 5470398, guid: d2ad870d73915064ea9dc0dc7f98c451, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: d2ad870d73915064ea9dc0dc7f98c451, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &269785285 stripped
@@ -639,6 +655,22 @@ Prefab:
     - target: {fileID: 5491560, guid: 606eb9ef9d1578049b09c3d14406cbea, type: 2}
       propertyPath: m_CollisionDetection
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6591488, guid: 606eb9ef9d1578049b09c3d14406cbea, type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6591488, guid: 606eb9ef9d1578049b09c3d14406cbea, type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 188246, guid: 606eb9ef9d1578049b09c3d14406cbea, type: 2}
+      propertyPath: m_TagString
+      value: Hit Ball
+      objectReference: {fileID: 0}
+    - target: {fileID: 188246, guid: 606eb9ef9d1578049b09c3d14406cbea, type: 2}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 606eb9ef9d1578049b09c3d14406cbea, type: 2}
@@ -1119,7 +1151,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 434646, guid: d2ad870d73915064ea9dc0dc7f98c451, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 9
+      value: 10.52
       objectReference: {fileID: 0}
     - target: {fileID: 434646, guid: d2ad870d73915064ea9dc0dc7f98c451, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1161,7 +1193,24 @@ Prefab:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 6500966, guid: d2ad870d73915064ea9dc0dc7f98c451, type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 434646, guid: d2ad870d73915064ea9dc0dc7f98c451, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 4.0394173
+      objectReference: {fileID: 0}
+    - target: {fileID: 140928, guid: d2ad870d73915064ea9dc0dc7f98c451, type: 2}
+      propertyPath: m_TagString
+      value: Goal
+      objectReference: {fileID: 0}
+    - target: {fileID: 140928, guid: d2ad870d73915064ea9dc0dc7f98c451, type: 2}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 5470398, guid: d2ad870d73915064ea9dc0dc7f98c451, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: d2ad870d73915064ea9dc0dc7f98c451, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &1649644969
@@ -1211,7 +1260,24 @@ Prefab:
       propertyPath: m_IsKinematic
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 6562950, guid: aee6e2999eaa7f04caaeee493c34a078, type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6562950, guid: aee6e2999eaa7f04caaeee493c34a078, type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 164308, guid: aee6e2999eaa7f04caaeee493c34a078, type: 2}
+      propertyPath: m_TagString
+      value: Hit Ball
+      objectReference: {fileID: 0}
+    - target: {fileID: 164308, guid: aee6e2999eaa7f04caaeee493c34a078, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 5401886, guid: aee6e2999eaa7f04caaeee493c34a078, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: aee6e2999eaa7f04caaeee493c34a078, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &1687547064 stripped
@@ -1285,7 +1351,24 @@ Prefab:
       propertyPath: m_Constraints
       value: 126
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 6562950, guid: aee6e2999eaa7f04caaeee493c34a078, type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6562950, guid: aee6e2999eaa7f04caaeee493c34a078, type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 164308, guid: aee6e2999eaa7f04caaeee493c34a078, type: 2}
+      propertyPath: m_TagString
+      value: Hit Ball
+      objectReference: {fileID: 0}
+    - target: {fileID: 164308, guid: aee6e2999eaa7f04caaeee493c34a078, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 5401886, guid: aee6e2999eaa7f04caaeee493c34a078, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: aee6e2999eaa7f04caaeee493c34a078, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1911515435

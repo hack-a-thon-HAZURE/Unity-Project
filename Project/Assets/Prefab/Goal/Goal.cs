@@ -11,7 +11,7 @@ public class Goal : MonoBehaviour
 {
     public int OwnerID;
 
-    private GameRuleManager  _GameRuleManager;
+    private GameRuleManager _GameRuleManager;
     private EvolutionManager _EvolutionManager;
 
     /// <summary>
@@ -27,12 +27,12 @@ public class Goal : MonoBehaviour
     /// </summary>
     void Start () 
     {
-        _GameRuleManager  = GameObject.Find("/GameRuleManager").GetComponent<GameRuleManager>();
+        _GameRuleManager = GameObject.Find("/GameRuleManager").GetComponent<GameRuleManager>();
 
         if (Application.loadedLevelName == "Pong")
         {
             _EvolutionManager = GameObject.Find("EvolutionManager").GetComponent<EvolutionManager>();
-        }
+    }
     }
 
     /// <summary>
@@ -44,8 +44,9 @@ public class Goal : MonoBehaviour
     }
 
     // 弾とゴールの接触判定
-    void OnCollisionEnter(Collision Col)
+    void OnTriggerEnter(Collider Col)
     {
+        if (Col.gameObject.tag != "Ball") return;
         Debug.Log("Goal");
 
         _GameRuleManager.DoneGoal(OwnerID, Col.gameObject);
@@ -61,4 +62,3 @@ public class Goal : MonoBehaviour
 //                                                                                               //
 //                                          @End of File                                         //
 //                                                                                               //
-//===============================================================================================//

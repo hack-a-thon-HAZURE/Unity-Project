@@ -9,43 +9,88 @@ using System.Collections;
 
 public class Ball : MonoBehaviour
 {
-    public float BallSpeed;
+    // メンバ変数
+    public float InitBallSpeed; // ボールの初速度
+    public float AddBallSpeed;  // ボールの加速度
+
+    private Rigidbody rigid;
+    private Vector2 vec;    // ベクトル
 
     /// <summary>
     /// Awake is called when the script instance is being loaded.
     /// </summary>
     void Awake()
     {
+        vec = new Vector2();
+        rigid = GetComponent<Rigidbody>();
 
-    }
-
-    /// <summary>
-    /// Use this for initialization.
-    /// </summary>
-    void Start () 
-    {
         // ボールが飛ぶ方向(左右)をランダムで決めている
-        int LR = (Random.Range(0, 2) == 0 ? -1 : 1);
-        float RotZ = Random.Range(Mathf.PI/4.0f, -Mathf.PI /4.0f);
+        float LR = (Random.Range(0, 2) == 0 ? -1 : 1);
+        float RotZ = Random.Range(Mathf.PI / 4.0f, -Mathf.PI / 4.0f);
 
         // ベクトルの生成
-        Vector3 DirNor = transform.right;
+        var DirNor = transform.right;
         DirNor *= LR;
 
-        Vector3 Dir = new Vector3();
-        Dir.x =  Mathf.Cos(RotZ) * DirNor.x + Mathf.Sin(RotZ) * DirNor.y;
-        Dir.y = -Mathf.Sin(RotZ) * DirNor.x + Mathf.Cos(RotZ) * DirNor.y;
-
-        this.GetComponent<Rigidbody>().AddForce(Dir * BallSpeed, ForceMode.VelocityChange);
+        vec.x = Mathf.Cos(RotZ) * DirNor.x + Mathf.Sin(RotZ)  * DirNor.y;
+        vec.y = -Mathf.Sin(RotZ) * DirNor.x + Mathf.Cos(RotZ) * DirNor.y;
+        vec *= InitBallSpeed;
     }
 
     /// <summary>
     /// Update is called once per frame.
     /// </summary>
-    void Update () 
+    void Update()
     {
-
+        // あたり判定の結果によって、ボールの動きが変化する
+        var info = new RaycastHit();
+        bool is_will_hit = Physics.Raycast(transform.position, vec.normalized, out info, vec.magnitude * Time.deltaTime/*, LayerMask.NameToLayer("Hit Ball")*/);
+        if (!is_will_hit) { Move(); }
+        else { Move(info); }
+        Debug.DrawRay(transform.position, vec*Time.deltaTime, Color.red);
     }
+
+    /// <summary>
+    /// ボールの移動(あたり判定から補間)
+    /// </summary>
+    private void Move(RaycastHit info)
+    {
+        Debug.Log("Hit Ball : " + info.collider.name);
+        Vector2 pos_old = transform.position;
+        Vector2 info_point = info.point;
+
+        // 現在のベクトルの分解
+        var vec_nor    = vec.normalized;
+        var vec_length = vec.magnitude;
+
+        // 当たる位置までの距離
+        var move_before_hit = info_point - pos_old;
+        var length_before_hit = move_before_hit.magnitude;
+
+        // 当たった後の残り移動距離
+        var length_after_hit = vec_length - length_before_hit;
+
+        // ベクトルの反転
+        var vec_ref_nor = Vector2.Reflect(vec_nor, info.normal);
+
+        // 移動結果後の位置
+        transform.position = pos_old + ((vec_nor * length_before_hit) + (vec_ref_nor * length_after_hit)) * Time.deltaTime;
+
+        // 最終的なベクトル
+        vec = vec_ref_nor * vec_length;
+    }
+
+    /// <summary>
+    /// ボールの移動
+    /// </summary>
+    private void Move()
+    {
+        // ベクトルを足す
+        Vector2 pos = transform.position;
+        pos += vec * Time.deltaTime;
+        transform.position = pos;
+    }
+
 }
 
 //===============================================================================================//
