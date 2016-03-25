@@ -28,7 +28,11 @@ public class Goal : MonoBehaviour
     void Start () 
     {
         _GameRuleManager  = GameObject.Find("/GameRuleManager").GetComponent<GameRuleManager>();
-        _EvolutionManager = GameObject.Find("EvolutionManager").GetComponent<EvolutionManager>();
+
+        if (Application.loadedLevelName == "Pong")
+        {
+            _EvolutionManager = GameObject.Find("EvolutionManager").GetComponent<EvolutionManager>();
+        }
     }
 
     /// <summary>
@@ -46,7 +50,10 @@ public class Goal : MonoBehaviour
 
         _GameRuleManager.DoneGoal(OwnerID, Col.gameObject);
 
-        _EvolutionManager.ResetCount();
+        if (Application.loadedLevelName == "Pong")
+        {
+            _EvolutionManager.ResetCount();
+        }
     }
 }
 

@@ -27,7 +27,7 @@ public class EvolutionManager : MonoBehaviour
 
         EvolutionCount++;
 
-        if (EvolutionCount > MaxEvolutionCount)
+        if (EvolutionCount >= MaxEvolutionCount)
         {
             Debug.Log("Evolution!");
 

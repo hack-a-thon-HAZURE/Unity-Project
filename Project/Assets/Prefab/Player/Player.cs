@@ -24,7 +24,10 @@ public class Player : MonoBehaviour
     /// </summary>
     void Start () 
     {
-        _EvolutionManager = GameObject.Find("EvolutionManager").GetComponent<EvolutionManager>();
+        if (Application.loadedLevelName == "Pong")
+        {
+            _EvolutionManager = GameObject.Find("EvolutionManager").GetComponent<EvolutionManager>();
+        }
     }
 
     /// <summary>
@@ -45,7 +48,10 @@ public class Player : MonoBehaviour
 
         Debug.Log("進化フラグ +1");
 
-        _EvolutionManager.AddCount();
+        if (Application.loadedLevelName == "Pong")
+        {
+            _EvolutionManager.AddCount();
+        }
     }
 }
 
