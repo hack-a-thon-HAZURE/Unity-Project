@@ -1073,7 +1073,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 474668, guid: aee6e2999eaa7f04caaeee493c34a078, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -4.8
+      value: -8.55
       objectReference: {fileID: 0}
     - target: {fileID: 474668, guid: aee6e2999eaa7f04caaeee493c34a078, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1119,6 +1119,10 @@ Prefab:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 474668, guid: aee6e2999eaa7f04caaeee493c34a078, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 7.805185
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: aee6e2999eaa7f04caaeee493c34a078, type: 2}
   m_IsPrefabParent: 0
@@ -1139,7 +1143,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 474668, guid: aee6e2999eaa7f04caaeee493c34a078, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 4.8
+      value: 7.69
       objectReference: {fileID: 0}
     - target: {fileID: 474668, guid: aee6e2999eaa7f04caaeee493c34a078, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1185,6 +1189,10 @@ Prefab:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 474668, guid: aee6e2999eaa7f04caaeee493c34a078, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 6.087898
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: aee6e2999eaa7f04caaeee493c34a078, type: 2}
   m_IsPrefabParent: 0
@@ -1217,7 +1225,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerOne: {fileID: 1610940259}
   PlayerTwo: {fileID: 659628865}
-  MoveSpeed: 0.1
+  MoveSpeed: 0.5
+  MaxMoveSpeed: 0.8
   MaxHeightRange: 5.5
 --- !u!4 &1911515437
 Transform:
