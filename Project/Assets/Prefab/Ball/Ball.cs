@@ -20,6 +20,8 @@ public class Ball : MonoBehaviour
     private int layerMask;  // レイヤーマスク
     private LineRenderer line_renderer;
 
+    public GameObject HitEffect;
+
     // プロパティ
     public Vector2 Vec { get { return vec; } set { vec = value; } }
 
@@ -165,6 +167,9 @@ public class Ball : MonoBehaviour
             Col.gameObject.GetComponent<AudioPlayer>().Play();
             Col.gameObject.GetComponent<Player>().TriggerEnter(Col);
         }
+
+        //ヒットエフェクト
+        Instantiate(HitEffect, transform.position, transform.rotation);
     }
 
 
