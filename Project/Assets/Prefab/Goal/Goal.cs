@@ -32,7 +32,7 @@ public class Goal : MonoBehaviour
         if (Application.loadedLevelName == "Pong")
         {
             _EvolutionManager = GameObject.Find("EvolutionManager").GetComponent<EvolutionManager>();
-    }
+        }
     }
 
     /// <summary>
@@ -44,12 +44,11 @@ public class Goal : MonoBehaviour
     }
 
     // 弾とゴールの接触判定
-    void OnTriggerEnter(Collider Col)
+    public void TriggerEnter(Collider Col)
     {
-        if (Col.gameObject.tag != "Ball") return;
         Debug.Log("Goal");
 
-        _GameRuleManager.DoneGoal(OwnerID, Col.gameObject);
+        _GameRuleManager.DoneGoal(OwnerID);
 
         if (Application.loadedLevelName == "Pong")
         {
