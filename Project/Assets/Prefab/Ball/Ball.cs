@@ -13,10 +13,12 @@ public class Ball : MonoBehaviour
     public float InitBallSpeed; // ボールの初速度
     public float AddBallSpeed;  // ボールの加速度
     public string[] HitIgnoreList;  // 反射処理無視リスト
+    public float StartMotionTime;   // スタート時のモーション時間
 
     private Rigidbody rigid;
     private Vector2 vec;    // ベクトル
     private int layerMask;  // レイヤーマスク
+    private LineRenderer line_renderer;
 
     // プロパティ
     public Vector2 Vec { get { return vec; } set { vec = value; } }
@@ -45,6 +47,14 @@ public class Ball : MonoBehaviour
         int ignore = LayerMask.GetMask(HitIgnoreList); ;
         layerMask = Physics.DefaultRaycastLayers ^ ignore;
 
+        // ラインレンダラーの作成
+        line_renderer = gameObject.AddComponent<LineRenderer>();
+        line_renderer.SetVertexCount(2);
+        line_renderer.material = new Material(Shader.Find("Particles/Additive"));
+        Vector3[] positions = { Vector3.zero, vec };
+        line_renderer.SetPositions(positions);
+        line_renderer.SetColors(Color.white, new Color(1.0f, 1.0f, 1.0f, 0.0f));
+        line_renderer.SetWidth(0.05f, 0.1f);
     }
 
     /// <summary>
@@ -54,6 +64,13 @@ public class Ball : MonoBehaviour
     {
         // カットイン中は動きを止める
         if (GameRuleManager.IsCutIn) return;
+
+        if (StartMotionTime > 0.0f)
+        {
+            StartMotionTime -= Time.deltaTime;
+            if (StartMotionTime <= 0.0f) Destroy(line_renderer);
+            return;
+        }
 
         // あたり判定の結果によって、ボールの動きが変化する
         var info = new RaycastHit();
@@ -149,8 +166,9 @@ public class Ball : MonoBehaviour
             Col.gameObject.GetComponent<Player>().TriggerEnter(Col);
         }
     }
-}
 
+
+}
 //===============================================================================================//
 //                                                                                               //
 //                                          @End of File                                         //

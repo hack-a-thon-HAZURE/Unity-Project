@@ -381,6 +381,14 @@ Prefab:
       propertyPath: HoldTime
       value: 2.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6543716, guid: 98ec0434b90b33c4e95c3c5475483b41, type: 2}
+      propertyPath: m_Size.x
+      value: -1.7788703
+      objectReference: {fileID: 0}
+    - target: {fileID: 6543716, guid: 98ec0434b90b33c4e95c3c5475483b41, type: 2}
+      propertyPath: m_Center.x
+      value: -0.901343
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 98ec0434b90b33c4e95c3c5475483b41, type: 2}
   m_IsPrefabParent: 0
