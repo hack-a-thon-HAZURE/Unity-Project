@@ -157,7 +157,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BuestEffectPrefab: {fileID: 179538, guid: 4f228fab3129b0a4ca52266a20df2433, type: 2}
-  HoldTime: 1
+  CutinPrefab: {fileID: 157656, guid: fc48a7cab3f2c3548acd8298f5e8a6f1, type: 2}
+  HoldTime: 1.5
   AddSpeed: 10
 --- !u!1001 &100100000
 Prefab:

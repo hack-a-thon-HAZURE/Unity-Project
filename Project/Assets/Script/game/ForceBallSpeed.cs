@@ -11,6 +11,8 @@ public class ForceBallSpeed : MonoBehaviour {
 
     /// メンバ変数
     public GameObject BuestEffectPrefab;
+    public GameObject CutinPrefab;
+
     public float HoldTime;  // 捕まえておく時間
     public float AddSpeed;  // 追加する速さ
 
@@ -93,8 +95,7 @@ public class ForceBallSpeed : MonoBehaviour {
         ball.Vec = vec;
 
         // エフェクト
-        var effect = GameObject.Instantiate(BuestEffectPrefab);
-        effect.transform.position = ball.gameObject.transform.position;
+        GameObject.Instantiate(CutinPrefab);
 
         Debug.Log("Catch");
     }
@@ -110,9 +111,13 @@ public class ForceBallSpeed : MonoBehaviour {
         is_catch = false;
         hold_time_count = HoldTime;
 
+        var effect = GameObject.Instantiate(BuestEffectPrefab);
+        effect.transform.position = ball.gameObject.transform.position;
+
         ball.enabled = true;
         ball.gameObject.transform.parent = null;
         ball = null;
+
     }
 }
 //===============================================================================================//
