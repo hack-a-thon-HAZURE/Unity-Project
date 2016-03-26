@@ -339,7 +339,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 38e48a3d973ce014e92ff69c46ca6c87, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1055,7 +1055,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EvolutionCount: 0
-  MaxEvolutionCount: 3
+  MaxEvolutionCount: 5
 --- !u!4 &2139716215
 Transform:
   m_ObjectHideFlags: 0
