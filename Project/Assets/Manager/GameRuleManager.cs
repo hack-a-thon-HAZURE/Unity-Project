@@ -12,6 +12,7 @@ using System.Collections;
 public class GameRuleManager : MonoBehaviour
 {
     public GameObject BallObject;
+    public GameObject ResultPrefab;
 
     public Score ScoreOne;
     public Score ScoreTwo;
@@ -95,7 +96,7 @@ public class GameRuleManager : MonoBehaviour
         yield return new WaitForSeconds(1.0f);
 
         AudioManager.Instance.BGMSource.volume = 0.7f;
-        SceneManager.LoadScene("Main");
+        GameObject.Instantiate(ResultPrefab);
     }
 
     public void StartCutin()
