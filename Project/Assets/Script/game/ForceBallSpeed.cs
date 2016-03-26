@@ -12,6 +12,7 @@ public class ForceBallSpeed : MonoBehaviour {
     /// メンバ変数
     public GameObject BuestEffectPrefab;
     public GameObject CutinPrefab;
+    public GameObject MegaHitPrefab;
 
     public float HoldTime;  // 捕まえておく時間
     public float AddSpeed;  // 追加する速さ
@@ -112,6 +113,9 @@ public class ForceBallSpeed : MonoBehaviour {
         hold_time_count = HoldTime;
 
         var effect = GameObject.Instantiate(BuestEffectPrefab);
+        effect.transform.position = ball.gameObject.transform.position;
+
+        effect = GameObject.Instantiate(MegaHitPrefab);
         effect.transform.position = ball.gameObject.transform.position;
 
         ball.enabled = true;
