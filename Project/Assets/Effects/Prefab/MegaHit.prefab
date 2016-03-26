@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 411524}
   - 198: {fileID: 19896108}
   - 199: {fileID: 19998662}
+  - 114: {fileID: 11494040}
   m_Layer: 0
   m_Name: MegaHit
   m_TagString: Untagged
@@ -29,6 +30,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &11494040
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 148568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8125e9284ee6604d9804c58d0b66c97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!198 &19896108
 ParticleSystem:
   m_ObjectHideFlags: 1

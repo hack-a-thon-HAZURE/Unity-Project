@@ -43,6 +43,8 @@ public class InputManager : MonoBehaviour
         hold_time_2 = 0;
 
         // エディター外ではマウスカーソルを消す
+        Cursor.lockState = CursorLockMode.Locked;
+
 #if UNITY_EDITOR
         Cursor.visible = true;
 #else

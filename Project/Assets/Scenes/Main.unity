@@ -330,7 +330,7 @@ MonoBehaviour:
   ResultPrefab: {fileID: 115820, guid: 95f9e8b8f21dcf44bba466d1029dae73, type: 2}
   ScoreOne: {fileID: 548440743}
   ScoreTwo: {fileID: 1298797654}
-  MaxScoreNum: 10
+  MaxScoreNum: 5
   ShieldObject000: {fileID: 1698011081}
   ShieldObject001: {fileID: 21259290}
 --- !u!4 &362216701
@@ -639,7 +639,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 448028, guid: 21abcd6c402d23247b05cabf2bd57b7a, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -8.5
+      value: -8.3
       objectReference: {fileID: 0}
     - target: {fileID: 448028, guid: 21abcd6c402d23247b05cabf2bd57b7a, type: 2}
       propertyPath: m_LocalPosition.z
@@ -647,7 +647,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 411766, guid: 21abcd6c402d23247b05cabf2bd57b7a, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 8.5
+      value: 8.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 448028, guid: 21abcd6c402d23247b05cabf2bd57b7a, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 21abcd6c402d23247b05cabf2bd57b7a, type: 2}
