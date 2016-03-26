@@ -33,6 +33,7 @@ public class EvolutionManager : MonoBehaviour
 
             // 画面遷移
             sceneManager.NextScene("Main");
+            AudioManager.Instance.BGMPlay("hurryup");
         }
     }
 

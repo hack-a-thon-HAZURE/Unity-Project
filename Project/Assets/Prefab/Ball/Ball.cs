@@ -62,7 +62,7 @@ public class Ball : MonoBehaviour
     /// </summary>
     private void Move(RaycastHit info)
     {
-        Debug.Log("Hit Ball : " + info.collider.name);
+        //Debug.Log("Hit Ball : " + info.collider.name);
         Vector2 pos_old = transform.position;
         Vector2 info_point = info.point;
 
@@ -85,6 +85,8 @@ public class Ball : MonoBehaviour
 
         // 最終的なベクトル
         vec = vec_ref_nor * vec_length;
+
+        CollisionEnter(info.collider);
     }
 
     /// <summary>
@@ -98,6 +100,28 @@ public class Ball : MonoBehaviour
         transform.position = pos;
     }
 
+    /// <summary>
+    /// 弾と何かが当たったときの
+    /// </summary>
+    /// <param name="Col"></param>
+    void CollisionEnter(Collider Col)
+    {
+        if (Col.gameObject.tag == "Goal")
+        {
+            Col.gameObject.GetComponent<Goal>().TriggerEnter(Col);
+            Destroy(this.gameObject);
+        }
+
+        if (Col.gameObject.tag == "Shield")
+        {
+            Col.gameObject.GetComponent<Shield>().TriggerEnter(Col);
+        }
+
+        if (Col.gameObject.tag == "Player")
+        {
+            Col.gameObject.GetComponent<Player>().TriggerEnter(Col);
+        }
+    }
 }
 
 //===============================================================================================//

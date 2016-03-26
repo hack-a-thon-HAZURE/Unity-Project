@@ -42,15 +42,13 @@ public class GameRuleManager : MonoBehaviour
 
     }
 
-    public void DoneGoal(int OwnerID, GameObject Object)
+    public void DoneGoal(int OwnerID)
     {
         // ゴールしたプレイヤーを特定する
         // OwnerIDはゴールの所持者(敵)
         Score GoalPlayer = ((OwnerID == 1) ? ScoreTwo : ScoreOne);
 
         GoalPlayer.ScoreNum += 1;
-
-        Destroy(Object);
 
         if (GoalPlayer.ScoreNum < MaxScoreNum)
         {
