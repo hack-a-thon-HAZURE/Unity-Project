@@ -96,6 +96,7 @@ MonoBehaviour:
   HitIgnoreList:
   - Trig Ball
   StartMotionTime: 1
+  HitEffect: {fileID: 148568, guid: 8ac7fd7d56c718b459442dc870c3b5bb, type: 2}
 --- !u!135 &13519864
 SphereCollider:
   m_ObjectHideFlags: 1
