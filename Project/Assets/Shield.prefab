@@ -12,6 +12,7 @@ GameObject:
   - 65: {fileID: 6582156}
   - 23: {fileID: 2365142}
   - 114: {fileID: 11405554}
+  - 54: {fileID: 5499476}
   m_Layer: 0
   m_Name: Shield
   m_TagString: Untagged
@@ -64,13 +65,28 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 171282}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &5499476
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 171282}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!65 &6582156
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 171282}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 89acdb420c709074b816e3330e2eca57, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -88,7 +104,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DeffenceNum: 0
-  MaxDeffenceNum: 0
+  MaxDeffenceNum: 3
+  Textures:
+  - {fileID: 2800000, guid: b3f5eec9d95901a49a1c16f49b849ab0, type: 3}
+  - {fileID: 2800000, guid: 4356cdb5b8704c54f9dffacb575549f8, type: 3}
+  - {fileID: 2800000, guid: 1473da99a5207c94592f31449987576c, type: 3}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
