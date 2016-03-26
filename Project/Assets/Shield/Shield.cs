@@ -37,7 +37,7 @@ public class Shield : MonoBehaviour
             this.GetComponent<MeshRenderer>().material.mainTexture = Textures[1];
         }
 
-        if (DeffenceNum <= 1)
+        if (DeffenceNum <= 3)
         {
             this.GetComponent<MeshRenderer>().material.mainTexture = Textures[2];
         }
