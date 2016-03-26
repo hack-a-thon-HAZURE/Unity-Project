@@ -54,6 +54,16 @@ public class GameRuleManager : MonoBehaviour
         Instantiate(BallObject);
 
         AudioManager.Instance.BGMPlay("drumnloop");
+
+        if (Application.loadedLevelName == "Pong")
+        {
+            gameObject.GetComponent<AudioPlayer>().Source = gameObject.GetComponents<AudioSource>()[0];
+        }
+
+        if (Application.loadedLevelName == "Main")
+        {
+            gameObject.GetComponent<AudioPlayer>().Source = gameObject.GetComponents<AudioSource>()[1];
+        }
     }
 
     /// <summary>

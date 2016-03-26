@@ -19,7 +19,7 @@ public class Result : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             if (is_continue) { sceneManager.NextScene("Main"); }
-            else { sceneManager.NextScene("Title"); }
+            else { sceneManager.NextScene("Title"); AudioManager.Instance.BGMPlay("GameCenter_Ambient"); }
         }
 
         if (Input.GetAxis("Mouse X") < 0.0f) is_continue = true;

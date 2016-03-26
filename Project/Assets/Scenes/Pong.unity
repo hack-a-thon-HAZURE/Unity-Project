@@ -920,6 +920,10 @@ Prefab:
       propertyPath: m_Options.m_Options.Array.data[3].m_Text
       value: Pong
       objectReference: {fileID: 0}
+    - target: {fileID: 166892, guid: 51e81c4f0ae852047a7ebd4b37a7fb3b, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 51e81c4f0ae852047a7ebd4b37a7fb3b, type: 2}
   m_IsPrefabParent: 0
