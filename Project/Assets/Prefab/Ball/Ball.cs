@@ -18,6 +18,9 @@ public class Ball : MonoBehaviour
     private Vector2 vec;    // ベクトル
     private int layerMask;  // レイヤーマスク
 
+    // プロパティ
+    public Vector2 Vec { get { return vec; } set { vec = value; } }
+
     /// <summary>
     /// Awake is called when the script instance is being loaded.
     /// </summary>
@@ -51,7 +54,8 @@ public class Ball : MonoBehaviour
     {
         // あたり判定の結果によって、ボールの動きが変化する
         var info = new RaycastHit();
-        bool is_will_hit = Physics.Raycast(transform.position, vec.normalized, out info, vec.magnitude * Time.deltaTime , layerMask);
+        bool is_will_hit =
+            Physics.Raycast(transform.position, vec.normalized, out info, vec.magnitude * Time.deltaTime , layerMask);
         if (!is_will_hit) { Move(); }
         else { Move(info); }
         Debug.DrawRay(transform.position, vec*Time.deltaTime, Color.red);
@@ -62,7 +66,7 @@ public class Ball : MonoBehaviour
     /// </summary>
     private void Move(RaycastHit info)
     {
-        Debug.Log("Hit Ball : " + info.collider.name);
+        //Debug.Log("Hit Ball : " + info.collider.name);
         Vector2 pos_old = transform.position;
         Vector2 info_point = info.point;
 
@@ -82,9 +86,13 @@ public class Ball : MonoBehaviour
 
         // 移動結果後の位置
         transform.position = pos_old + ((vec_nor * length_before_hit) + (vec_ref_nor * length_after_hit)) * Time.deltaTime;
+        rigid.MovePosition(transform.position);
 
         // 最終的なベクトル
         vec = vec_ref_nor * vec_length;
+
+        // 加速
+        AddSpeedIfHit();
     }
 
     /// <summary>
@@ -96,6 +104,18 @@ public class Ball : MonoBehaviour
         Vector2 pos = transform.position;
         pos += vec * Time.deltaTime;
         transform.position = pos;
+    }
+
+
+
+    /// <summary>
+    /// 何かに当たったら加速
+    /// </summary>
+    private void AddSpeedIfHit()
+    {
+        var vec_nor = vec.normalized;
+        var speed = vec.magnitude;
+        vec = vec_nor * (speed + AddBallSpeed);
     }
 
 }

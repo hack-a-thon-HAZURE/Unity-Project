@@ -128,6 +128,18 @@ Prefab:
       propertyPath: m_Name
       value: PlayerOne
       objectReference: {fileID: 0}
+    - target: {fileID: 6534800, guid: 606eb9ef9d1578049b09c3d14406cbea, type: 2}
+      propertyPath: m_Size.x
+      value: 1.9302658
+      objectReference: {fileID: 0}
+    - target: {fileID: 6534800, guid: 606eb9ef9d1578049b09c3d14406cbea, type: 2}
+      propertyPath: m_Center.x
+      value: 0.9532245
+      objectReference: {fileID: 0}
+    - target: {fileID: 143154, guid: 606eb9ef9d1578049b09c3d14406cbea, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 606eb9ef9d1578049b09c3d14406cbea, type: 2}
   m_IsPrefabParent: 0
@@ -623,6 +635,54 @@ Prefab:
     - target: {fileID: 188246, guid: 606eb9ef9d1578049b09c3d14406cbea, type: 2}
       propertyPath: m_Name
       value: PlayerTwo
+      objectReference: {fileID: 0}
+    - target: {fileID: 472434, guid: 606eb9ef9d1578049b09c3d14406cbea, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Size.x
+      value: 7.153719
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Center.x
+      value: -3.0601373
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Offset.x
+      value: -1.353159
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Size.x
+      value: 2.7186399
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6534800, guid: 606eb9ef9d1578049b09c3d14406cbea, type: 2}
+      propertyPath: m_Size.x
+      value: 3.70198
+      objectReference: {fileID: 0}
+    - target: {fileID: 6534800, guid: 606eb9ef9d1578049b09c3d14406cbea, type: 2}
+      propertyPath: m_Center.x
+      value: -1.4395475
+      objectReference: {fileID: 0}
+    - target: {fileID: 6534800, guid: 606eb9ef9d1578049b09c3d14406cbea, type: 2}
+      propertyPath: m_Size.y
+      value: 0.94123274
+      objectReference: {fileID: 0}
+    - target: {fileID: 6534800, guid: 606eb9ef9d1578049b09c3d14406cbea, type: 2}
+      propertyPath: m_Center.y
+      value: -0.004897301
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 606eb9ef9d1578049b09c3d14406cbea, type: 2}
@@ -1355,6 +1415,7 @@ MonoBehaviour:
   MoveSpeed: 0.5
   MaxMoveSpeed: 0.8
   MaxHeightRange: 5.5
+  HoldTime: 0.45
 --- !u!4 &1911515437
 Transform:
   m_ObjectHideFlags: 0

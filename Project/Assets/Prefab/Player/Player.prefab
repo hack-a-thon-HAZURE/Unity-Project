@@ -1,5 +1,22 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &143154
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 472434}
+  - 114: {fileID: 11499328}
+  - 65: {fileID: 6534800}
+  m_Layer: 10
+  m_Name: ForceBallSpeed
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &188246
 GameObject:
   m_ObjectHideFlags: 0
@@ -29,8 +46,21 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -7, y: 0, z: 0}
   m_LocalScale: {x: 0.3, y: 1.3, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 472434}
   m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!4 &472434
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 143154}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 450900}
   m_RootOrder: 0
 --- !u!23 &2398724
 MeshRenderer:
@@ -80,6 +110,18 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 122
   m_CollisionDetection: 0
+--- !u!65 &6534800
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 143154}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5305347, y: 0.95592463, z: 1}
+  m_Center: {x: 0.75336295, y: -0.0024486505, z: 0}
 --- !u!65 &6591488
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -103,6 +145,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 556ef7601c28bdb46bc347360e2f1946, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11499328
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 143154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c3ac44ae979a7409f8ae3a0d1315f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HoldTime: 1
+  AddSpeed: 10
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
