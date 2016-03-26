@@ -18,6 +18,21 @@ public class GameRuleManager : MonoBehaviour
 
     public int MaxScoreNum;
 
+    // 現在カットイン中
+    private static bool isCutin;
+
+    public static bool IsCutIn
+    {
+        set
+        {
+            isCutin = value;
+        }
+        get
+        {
+            return isCutin;
+        }
+    }
+
     /// <summary>
     /// Awake is called when the script instance is being loaded.
     /// </summary>
@@ -31,6 +46,7 @@ public class GameRuleManager : MonoBehaviour
     /// </summary>
     void Start () 
     {
+        isCutin = false;
         Instantiate(BallObject);
     }
 
@@ -52,6 +68,9 @@ public class GameRuleManager : MonoBehaviour
 
         if (GoalPlayer.ScoreNum < MaxScoreNum)
         {
+            AudioPlayer _AudioPlayer = gameObject.GetComponent<AudioPlayer>();
+            _AudioPlayer.Play();
+
             StartCoroutine("Restart");
 
         }else
@@ -72,6 +91,11 @@ public class GameRuleManager : MonoBehaviour
         yield return new WaitForSeconds(1.0f);
 
         SceneManager.LoadScene("Main");
+    }
+
+    public void StartCutin()
+    {
+        isCutin = true;
     }
 }
 

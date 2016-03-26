@@ -14,7 +14,6 @@ public class Ball : MonoBehaviour
     public float AddBallSpeed;  // ボールの加速度
     public string[] HitIgnoreList;  // 反射処理無視リスト
 
-    private Rigidbody rigid;
     private Vector2 vec;    // ベクトル
     private int layerMask;  // レイヤーマスク
 
@@ -24,7 +23,6 @@ public class Ball : MonoBehaviour
     void Awake()
     {
         vec = new Vector2();
-        rigid = GetComponent<Rigidbody>();
 
         // ボールが飛ぶ方向(左右)をランダムで決めている
         float LR = (Random.Range(0, 2) == 0 ? -1 : 1);
@@ -34,7 +32,7 @@ public class Ball : MonoBehaviour
         var DirNor = transform.right;
         DirNor *= LR;
 
-        vec.x = Mathf.Cos(RotZ) * DirNor.x + Mathf.Sin(RotZ)  * DirNor.y;
+        vec.x =  Mathf.Cos(RotZ) * DirNor.x + Mathf.Sin(RotZ)  * DirNor.y;
         vec.y = -Mathf.Sin(RotZ) * DirNor.x + Mathf.Cos(RotZ) * DirNor.y;
         vec *= InitBallSpeed;
 
@@ -49,6 +47,9 @@ public class Ball : MonoBehaviour
     /// </summary>
     void Update()
     {
+        // カットイン中はボールの動きを止める
+        if (GameRuleManager.IsCutIn) return;
+
         // あたり判定の結果によって、ボールの動きが変化する
         var info = new RaycastHit();
         bool is_will_hit = Physics.Raycast(transform.position, vec.normalized, out info, vec.magnitude * Time.deltaTime , layerMask);
@@ -112,6 +113,11 @@ public class Ball : MonoBehaviour
             Destroy(this.gameObject);
         }
 
+        if (Col.gameObject.tag == "Wall")
+        {
+            Col.gameObject.GetComponent<AudioPlayer>().Play();
+        }
+
         if (Col.gameObject.tag == "Shield")
         {
             Col.gameObject.GetComponent<Shield>().TriggerEnter(Col);
@@ -119,6 +125,7 @@ public class Ball : MonoBehaviour
 
         if (Col.gameObject.tag == "Player")
         {
+            Col.gameObject.GetComponent<AudioPlayer>().Play();
             Col.gameObject.GetComponent<Player>().TriggerEnter(Col);
         }
     }
