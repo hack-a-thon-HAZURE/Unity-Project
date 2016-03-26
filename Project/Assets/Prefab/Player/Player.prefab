@@ -120,8 +120,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.5305347, y: 0.95592463, z: 1}
-  m_Center: {x: 0.75336295, y: -0.0024486505, z: 0}
+  m_Size: {x: 1.9302658, y: 0.95592463, z: 1}
+  m_Center: {x: 0.9532245, y: -0.0024486505, z: 0}
 --- !u!65 &6591488
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -156,6 +156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86c3ac44ae979a7409f8ae3a0d1315f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BuestEffectPrefab: {fileID: 179538, guid: 4f228fab3129b0a4ca52266a20df2433, type: 2}
   HoldTime: 1
   AddSpeed: 10
 --- !u!1001 &100100000

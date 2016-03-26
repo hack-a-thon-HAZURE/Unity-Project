@@ -10,6 +10,7 @@ using System.Collections;
 public class ForceBallSpeed : MonoBehaviour {
 
     /// メンバ変数
+    public GameObject BuestEffectPrefab;
     public float HoldTime;  // 捕まえておく時間
     public float AddSpeed;  // 追加する速さ
 
@@ -90,6 +91,10 @@ public class ForceBallSpeed : MonoBehaviour {
         vec   *= -speed;
 
         ball.Vec = vec;
+
+        // エフェクト
+        var effect = GameObject.Instantiate(BuestEffectPrefab);
+        effect.transform.position = ball.gameObject.transform.position;
 
         Debug.Log("Catch");
     }
