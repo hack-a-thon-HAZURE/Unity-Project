@@ -52,6 +52,9 @@ public class Ball : MonoBehaviour
     /// </summary>
     void Update()
     {
+        // カットイン中は動きを止める
+        if (GameRuleManager.IsCutIn) return;
+
         // あたり判定の結果によって、ボールの動きが変化する
         var info = new RaycastHit();
         bool is_will_hit =
@@ -124,6 +127,17 @@ public class Ball : MonoBehaviour
     /// <param name="Col"></param>
     void CollisionEnter(Collider Col)
     {
+        if (Col.gameObject.tag == "Goal")
+        {
+            //Col.gameObject.GetComponent<Goal>().TriggerEnter(Col);
+            //Destroy(this.gameObject);
+        }
+
+        if (Col.gameObject.tag == "Wall")
+        {
+            Col.gameObject.GetComponent<AudioPlayer>().Play();
+        }
+
         if (Col.gameObject.tag == "Shield")
         {
             Col.gameObject.GetComponent<Shield>().TriggerEnter(Col);
@@ -131,12 +145,14 @@ public class Ball : MonoBehaviour
 
         if (Col.gameObject.tag == "Player")
         {
+            Col.gameObject.GetComponent<AudioPlayer>().Play();
             Col.gameObject.GetComponent<Player>().TriggerEnter(Col);
         }
     }
 }
 
 //===============================================================================================//
-//                                          @End of File                                         //
+//                                                                                               //
 //                                          @End of File                                         //
 //                                                                                               //
+//===============================================================================================//
