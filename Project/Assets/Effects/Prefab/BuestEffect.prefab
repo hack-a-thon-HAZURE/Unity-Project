@@ -88,7 +88,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LifeTime: 3
-  ScalingValue: 30
+  ScalingValue: 120
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
