@@ -8,6 +8,7 @@ TagManager:
   - Goal
   - Hit Ball
   - Shield
+  - Wall
   layers:
   - Default
   - TransparentFX

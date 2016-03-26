@@ -44,11 +44,13 @@ public class Goal : MonoBehaviour
     }
 
     // 弾とゴールの接触判定
-    public void TriggerEnter(Collider Col)
+    void OnTriggerEnter(Collider Col)
     {
+        if (Col.gameObject.tag != "Ball") return;
         Debug.Log("Goal");
 
         _GameRuleManager.DoneGoal(OwnerID);
+        Destroy(Col.gameObject);
 
         if (Application.loadedLevelName == "Pong")
         {
@@ -61,3 +63,4 @@ public class Goal : MonoBehaviour
 //                                                                                               //
 //                                          @End of File                                         //
 //                                                                                               //
+//===============================================================================================//
