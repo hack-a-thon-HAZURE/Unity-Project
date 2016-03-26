@@ -93,6 +93,7 @@ public class Ball : MonoBehaviour
 
         // 加速
         AddSpeedIfHit();
+        CollisionEnter(info.collider);
     }
 
     /// <summary>
@@ -117,11 +118,25 @@ public class Ball : MonoBehaviour
         var speed = vec.magnitude;
         vec = vec_nor * (speed + AddBallSpeed);
     }
+    /// <summary>
+    /// 弾と何かが当たったときの
+    /// </summary>
+    /// <param name="Col"></param>
+    void CollisionEnter(Collider Col)
+    {
+        if (Col.gameObject.tag == "Shield")
+        {
+            Col.gameObject.GetComponent<Shield>().TriggerEnter(Col);
+        }
 
+        if (Col.gameObject.tag == "Player")
+        {
+            Col.gameObject.GetComponent<Player>().TriggerEnter(Col);
+        }
+    }
 }
 
 //===============================================================================================//
-//                                                                                               //
+//                                          @End of File                                         //
 //                                          @End of File                                         //
 //                                                                                               //
-//===============================================================================================//

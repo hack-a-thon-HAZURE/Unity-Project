@@ -42,10 +42,8 @@ public class Player : MonoBehaviour
     /// 玉とプレイヤーの当たり判定を取って、進化フラグを
     /// </summary>
     /// <param name="Col"></param>
-    void OnCollisionEnter(Collision Col)
+    public void TriggerEnter(Collider Col)
     {
-        if (Col.gameObject.tag != "Ball") return;
-
         Debug.Log("進化フラグ +1");
 
         if (Application.loadedLevelName == "Pong")

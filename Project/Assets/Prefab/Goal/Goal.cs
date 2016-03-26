@@ -32,7 +32,7 @@ public class Goal : MonoBehaviour
         if (Application.loadedLevelName == "Pong")
         {
             _EvolutionManager = GameObject.Find("EvolutionManager").GetComponent<EvolutionManager>();
-    }
+        }
     }
 
     /// <summary>
@@ -49,7 +49,8 @@ public class Goal : MonoBehaviour
         if (Col.gameObject.tag != "Ball") return;
         Debug.Log("Goal");
 
-        _GameRuleManager.DoneGoal(OwnerID, Col.gameObject);
+        _GameRuleManager.DoneGoal(OwnerID);
+        Destroy(Col.gameObject);
 
         if (Application.loadedLevelName == "Pong")
         {
