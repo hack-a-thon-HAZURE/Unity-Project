@@ -98,6 +98,9 @@ public class ForceBallSpeed : MonoBehaviour {
         // エフェクト
         GameObject.Instantiate(CutinPrefab);
 
+        // SE再生
+        StartCoroutine("PlaySound");
+
         Debug.Log("Catch");
     }
 
@@ -123,7 +126,15 @@ public class ForceBallSpeed : MonoBehaviour {
         ball = null;
 
     }
+
+    IEnumerator PlaySound()
+    {
+        yield return new WaitForSeconds(2.2f);
+
+        gameObject.GetComponent<AudioPlayer>().Play();
+    }
 }
+
 //===============================================================================================//
 //                                                                                               //
 //                                          @End of File                                         //

@@ -140,6 +140,7 @@ public class Ball : MonoBehaviour
         var speed = vec.magnitude;
         vec = vec_nor * (speed + AddBallSpeed);
     }
+
     /// <summary>
     /// 弾と何かが当たったときの
     /// </summary>
@@ -159,6 +160,13 @@ public class Ball : MonoBehaviour
 
         if (Col.gameObject.tag == "Shield")
         {
+            Shield Temp = Col.gameObject.GetComponent<Shield>();
+            if ((Temp.DeffenceNum == 1))
+            {
+                // SE再生 シールドが壊れる音
+                gameObject.GetComponent<AudioPlayer>().Play();
+            }
+
             Col.gameObject.GetComponent<Shield>().TriggerEnter(Col);
         }
 
