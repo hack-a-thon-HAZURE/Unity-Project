@@ -12,9 +12,11 @@ public class Ball : MonoBehaviour
     // メンバ変数
     public float InitBallSpeed; // ボールの初速度
     public float AddBallSpeed;  // ボールの加速度
+    public string[] HitIgnoreList;  // 反射処理無視リスト
 
     private Rigidbody rigid;
     private Vector2 vec;    // ベクトル
+    private int layerMask;  // レイヤーマスク
 
     /// <summary>
     /// Awake is called when the script instance is being loaded.
@@ -35,6 +37,11 @@ public class Ball : MonoBehaviour
         vec.x = Mathf.Cos(RotZ) * DirNor.x + Mathf.Sin(RotZ)  * DirNor.y;
         vec.y = -Mathf.Sin(RotZ) * DirNor.x + Mathf.Cos(RotZ) * DirNor.y;
         vec *= InitBallSpeed;
+
+        // レイヤーマスク作成
+        int ignore = LayerMask.GetMask(HitIgnoreList); ;
+        layerMask = Physics.DefaultRaycastLayers ^ ignore;
+
     }
 
     /// <summary>
@@ -44,7 +51,7 @@ public class Ball : MonoBehaviour
     {
         // あたり判定の結果によって、ボールの動きが変化する
         var info = new RaycastHit();
-        bool is_will_hit = Physics.Raycast(transform.position, vec.normalized, out info, vec.magnitude * Time.deltaTime/*, LayerMask.NameToLayer("Hit Ball")*/);
+        bool is_will_hit = Physics.Raycast(transform.position, vec.normalized, out info, vec.magnitude * Time.deltaTime , layerMask);
         if (!is_will_hit) { Move(); }
         else { Move(info); }
         Debug.DrawRay(transform.position, vec*Time.deltaTime, Color.red);

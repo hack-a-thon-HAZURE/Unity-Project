@@ -93,6 +93,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InitBallSpeed: 8
   AddBallSpeed: 0.5
+  HitIgnoreList:
+  - Trig Ball
 --- !u!135 &13519864
 SphereCollider:
   m_ObjectHideFlags: 1
