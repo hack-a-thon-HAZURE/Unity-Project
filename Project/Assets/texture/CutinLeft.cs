@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CutinLeft : MonoBehaviour {
+public class CutinLeft : MonoBehaviour
+{
 
     public float CutinTime = 3.0f;
     private float CutinTimeCnt = 0.0f;
@@ -16,8 +17,9 @@ public class CutinLeft : MonoBehaviour {
     private float EndTweenTime = 0.2f;
     private float EndTweenTimeCnt = 0.0f;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
         //背景オブジェクトのUVを念のためリセット
         CutinBg.GetComponent<Renderer>().sharedMaterial.SetTextureOffset("_MainTex", Vector2.zero);
         //BgにTween
@@ -38,15 +40,18 @@ public class CutinLeft : MonoBehaviour {
                        "time", 0.5,
                        "easeType", "easeOutElastic"));
 
-	}
-	
-	// Update is called once per frame
-	void Update () {
+        // SE再生
+        this.gameObject.GetComponent<AudioPlayer>().Play();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
         //背景スクロール
-        float OffsetX = Mathf.Repeat( Time.time * BgScrollX , 1 );
-        float OffsetY = Mathf.Repeat( Time.time * BgScrollY , 1 );
+        float OffsetX = Mathf.Repeat(Time.time * BgScrollX, 1);
+        float OffsetY = Mathf.Repeat(Time.time * BgScrollY, 1);
         Vector2 Offset = new Vector2(OffsetX, OffsetY);
-        CutinBg.GetComponent<Renderer>().sharedMaterial.SetTextureOffset("_MainTex", Offset );
+        CutinBg.GetComponent<Renderer>().sharedMaterial.SetTextureOffset("_MainTex", Offset);
 
         //カットインタイムがきたら終わり
         if (CutinTimeCnt < CutinTime)
@@ -61,12 +66,12 @@ public class CutinLeft : MonoBehaviour {
         else
         {
             EndTweenTimeCnt += Time.deltaTime;
-            if (EndTweenTimeCnt >= EndTweenTime * 2.0f )
+            if (EndTweenTimeCnt >= EndTweenTime * 2.0f)
             {
-               Destroy(gameObject);
+                Destroy(gameObject);
             }
         }
-	}
+    }
 
     private void End()
     {
