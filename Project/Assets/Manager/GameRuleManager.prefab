@@ -117,6 +117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BallObject: {fileID: 102574, guid: fcdca461a50ee874b9c9f5c574a2f62d, type: 2}
+  ResultPrefab: {fileID: 115820, guid: 95f9e8b8f21dcf44bba466d1029dae73, type: 2}
   ScoreOne: {fileID: 0}
   ScoreTwo: {fileID: 0}
   MaxScoreNum: 10
