@@ -873,7 +873,7 @@ MonoBehaviour:
   PlayerTwo: {fileID: 450977596}
   MoveSpeed: 0.5
   MaxMoveSpeed: 0.8
-  MaxHeightRange: 5.5
+  MaxHeightRange: 4
   HoldTime: 0.45
 --- !u!4 &1911515437
 Transform:
