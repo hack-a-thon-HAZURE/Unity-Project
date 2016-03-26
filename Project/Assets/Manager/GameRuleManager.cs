@@ -68,6 +68,10 @@ public class GameRuleManager : MonoBehaviour
 
         if (GoalPlayer.ScoreNum < MaxScoreNum)
         {
+            if (Application.loadedLevelName == "Pong")
+            {
+                AudioManager.Instance.BGMSource.volume = 0.0f;
+            }
             AudioPlayer _AudioPlayer = gameObject.GetComponent<AudioPlayer>();
             _AudioPlayer.Play();
 
@@ -90,6 +94,7 @@ public class GameRuleManager : MonoBehaviour
     {
         yield return new WaitForSeconds(1.0f);
 
+        AudioManager.Instance.BGMSource.volume = 0.7f;
         SceneManager.LoadScene("Main");
     }
 

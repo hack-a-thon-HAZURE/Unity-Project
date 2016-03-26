@@ -25,6 +25,7 @@ public class EvolutionManager : MonoBehaviour
     {
         if (Application.loadedLevelName != "Pong") return;
 
+        AudioManager.Instance.BGMSource.volume += 0.1f;
         EvolutionCount++;
 
         if (EvolutionCount >= MaxEvolutionCount)
