@@ -275,8 +275,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.9302658, y: 0.95592463, z: 1}
-  m_Center: {x: 0.9532245, y: -0.0024486505, z: 0}
+  m_Size: {x: -1.8029542, y: 0.95592463, z: 1}
+  m_Center: {x: -0.91338634, y: -0.0024486505, z: 0}
 --- !u!65 &6581926
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -487,6 +487,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BuestEffectPrefab: {fileID: 179538, guid: 4f228fab3129b0a4ca52266a20df2433, type: 2}
   CutinPrefab: {fileID: 157656, guid: fc48a7cab3f2c3548acd8298f5e8a6f1, type: 2}
+  MegaHitPrefab: {fileID: 148568, guid: 064dd0e7aebf5f94da92bb23d9b49aaf, type: 2}
   HoldTime: 2.5
   AddSpeed: 10
 --- !u!114 &11469642
@@ -501,8 +502,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BuestEffectPrefab: {fileID: 179538, guid: 4f228fab3129b0a4ca52266a20df2433, type: 2}
-  CutinPrefab: {fileID: 0}
-  HoldTime: 1
+  CutinPrefab: {fileID: 105974, guid: 90afb95e73407c2458c77e260636cc63, type: 2}
+  MegaHitPrefab: {fileID: 148568, guid: 064dd0e7aebf5f94da92bb23d9b49aaf, type: 2}
+  HoldTime: 2.5
   AddSpeed: 10
 --- !u!114 &11471638
 MonoBehaviour:

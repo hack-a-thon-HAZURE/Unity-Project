@@ -461,26 +461,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 11469642, guid: 98ec0434b90b33c4e95c3c5475483b41, type: 2}
-      propertyPath: CutinPrefab
-      value: 
-      objectReference: {fileID: 105974, guid: 90afb95e73407c2458c77e260636cc63, type: 2}
-    - target: {fileID: 8210600, guid: 98ec0434b90b33c4e95c3c5475483b41, type: 2}
-      propertyPath: spreadCustomCurve.m_RotationOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11469642, guid: 98ec0434b90b33c4e95c3c5475483b41, type: 2}
-      propertyPath: HoldTime
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6504592, guid: 98ec0434b90b33c4e95c3c5475483b41, type: 2}
-      propertyPath: m_Center.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6543716, guid: 98ec0434b90b33c4e95c3c5475483b41, type: 2}
-      propertyPath: m_Center.x
-      value: -0.9532245
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 98ec0434b90b33c4e95c3c5475483b41, type: 2}
   m_IsPrefabParent: 0
