@@ -11,9 +11,7 @@ public class Shield : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        DeffenceNum = MaxDeffenceNum;
-
-        this.GetComponent<MeshRenderer>().material.mainTexture = Textures[0];
+        Reset();
     }
 
     // Update is called once per frame
@@ -46,5 +44,12 @@ public class Shield : MonoBehaviour
         {
             this.gameObject.SetActive(false);
         }
+    }
+
+    public void Reset()
+    {
+        DeffenceNum = MaxDeffenceNum;
+
+        this.GetComponent<MeshRenderer>().material.mainTexture = Textures[0];
     }
 }

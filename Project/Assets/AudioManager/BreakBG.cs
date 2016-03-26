@@ -17,7 +17,7 @@ public class BreakBG : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(this.gameObject.transform.position.y <= 200.0f)
+        if(this.gameObject.transform.position.y <= -200.0f)
         {
             Destroy(this.gameObject);
         }

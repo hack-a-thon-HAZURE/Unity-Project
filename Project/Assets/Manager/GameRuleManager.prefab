@@ -121,6 +121,8 @@ MonoBehaviour:
   ScoreOne: {fileID: 0}
   ScoreTwo: {fileID: 0}
   MaxScoreNum: 10
+  ShieldObject000: {fileID: 0}
+  ShieldObject001: {fileID: 0}
 --- !u!114 &11454126
 MonoBehaviour:
   m_ObjectHideFlags: 1
