@@ -85,6 +85,10 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &21259290 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 174598, guid: 21abcd6c402d23247b05cabf2bd57b7a, type: 2}
+  m_PrefabInternal: {fileID: 599216065}
 --- !u!1001 &151785880
 Prefab:
   m_ObjectHideFlags: 0
@@ -413,7 +417,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11460194, guid: 21abcd6c402d23247b05cabf2bd57b7a, type: 2}
       propertyPath: MaxDeffenceNum
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 11412070, guid: 21abcd6c402d23247b05cabf2bd57b7a, type: 2}
       propertyPath: MaxDeffenceNum
@@ -460,26 +464,6 @@ Prefab:
     - target: {fileID: 413874, guid: 98ec0434b90b33c4e95c3c5475483b41, type: 2}
       propertyPath: m_RootOrder
       value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 11469642, guid: 98ec0434b90b33c4e95c3c5475483b41, type: 2}
-      propertyPath: CutinPrefab
-      value: 
-      objectReference: {fileID: 105974, guid: 90afb95e73407c2458c77e260636cc63, type: 2}
-    - target: {fileID: 8210600, guid: 98ec0434b90b33c4e95c3c5475483b41, type: 2}
-      propertyPath: spreadCustomCurve.m_RotationOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11469642, guid: 98ec0434b90b33c4e95c3c5475483b41, type: 2}
-      propertyPath: HoldTime
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6504592, guid: 98ec0434b90b33c4e95c3c5475483b41, type: 2}
-      propertyPath: m_Center.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6543716, guid: 98ec0434b90b33c4e95c3c5475483b41, type: 2}
-      propertyPath: m_Center.x
-      value: -0.9532245
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 98ec0434b90b33c4e95c3c5475483b41, type: 2}
@@ -682,6 +666,14 @@ Prefab:
       propertyPath: ScoreTwo
       value: 
       objectReference: {fileID: 1298797654}
+    - target: {fileID: 11427142, guid: 9f8917f685889f943a7410263acdcfb2, type: 2}
+      propertyPath: ShieldObject000
+      value: 
+      objectReference: {fileID: 1698011081}
+    - target: {fileID: 11427142, guid: 9f8917f685889f943a7410263acdcfb2, type: 2}
+      propertyPath: ShieldObject001
+      value: 
+      objectReference: {fileID: 21259290}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9f8917f685889f943a7410263acdcfb2, type: 2}
   m_IsPrefabParent: 0
@@ -942,6 +934,10 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1547b573cd0acbe45bdc5d91a9ceb396, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1698011081 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 131098, guid: 21abcd6c402d23247b05cabf2bd57b7a, type: 2}
+  m_PrefabInternal: {fileID: 599216065}
 --- !u!1 &1911515435
 GameObject:
   m_ObjectHideFlags: 0

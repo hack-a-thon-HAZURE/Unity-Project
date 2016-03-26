@@ -13,7 +13,7 @@ GameObject:
   - 23: {fileID: 2301316}
   - 54: {fileID: 5447976}
   - 114: {fileID: 11497322}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GoalTwo
   m_TagString: Goal
   m_Icon: {fileID: 0}
@@ -48,7 +48,7 @@ GameObject:
   - 23: {fileID: 2333004}
   - 54: {fileID: 5432376}
   - 114: {fileID: 11423614}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GoalOne
   m_TagString: Goal
   m_Icon: {fileID: 0}
