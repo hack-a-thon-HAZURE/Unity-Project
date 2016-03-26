@@ -18,6 +18,9 @@ public class GameRuleManager : MonoBehaviour
 
     public int MaxScoreNum;
 
+    public GameObject ShieldObject000;
+    public GameObject ShieldObject001;
+
     // 現在カットイン中
     private static bool isCutin;
 
@@ -86,6 +89,12 @@ public class GameRuleManager : MonoBehaviour
     IEnumerator Restart()
     {
         yield return new WaitForSeconds(1.0f);
+
+        ShieldObject000.SetActive(true);
+        ShieldObject000.GetComponent<Shield>().Reset();
+
+        ShieldObject001.SetActive(true);
+        ShieldObject001.GetComponent<Shield>().Reset();
 
         Instantiate(BallObject);
     }
