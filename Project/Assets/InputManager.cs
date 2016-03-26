@@ -17,12 +17,19 @@ public class InputManager : MonoBehaviour
 
     public float MaxHeightRange;
 
+    public float HoldTime;
 
     private Rigidbody PlayerOneRigid;
     private Rigidbody PlayerTwoRigid;
 
     private float PlayerOneVirtualKey;
     private float PlayerTwoVirtualKey;
+
+    private ForceBallSpeed PlayerOneForceBall;
+    private ForceBallSpeed PlayerTwoForceBall;
+
+    private float hold_time_1;
+    private float hold_time_2;
 
     /// <summary>
     /// Awake is called when the script instance is being loaded.
@@ -31,6 +38,9 @@ public class InputManager : MonoBehaviour
     {
         PlayerOneVirtualKey = 0;
         PlayerTwoVirtualKey = 0;
+
+        hold_time_1 = 0;
+        hold_time_2 = 0;
 
         // エディター外ではマウスカーソルを消す
 #if UNITY_EDITOR
@@ -43,10 +53,12 @@ public class InputManager : MonoBehaviour
     /// <summary>
     /// Use this for initialization.
     /// </summary>
-    void Start () 
+    void Start()
     {
         PlayerOneRigid = PlayerOne.GetComponent<Rigidbody>();
         PlayerTwoRigid = PlayerTwo.GetComponent<Rigidbody>();
+        PlayerOneForceBall = PlayerOne.GetComponentInChildren<ForceBallSpeed>();
+        PlayerTwoForceBall = PlayerTwo.GetComponentInChildren<ForceBallSpeed>();
     }
 
     /// <summary>
@@ -82,11 +94,16 @@ public class InputManager : MonoBehaviour
             float add = PlayerOneVirtualKey;
 
             if (add < -MaxMoveSpeed) add = -MaxMoveSpeed;
-            if (add >  MaxMoveSpeed) add =  MaxMoveSpeed;
+            if (add > MaxMoveSpeed) add = MaxMoveSpeed;
 
             Pos.y += add;
             Pos.y = Mathf.Clamp(Pos.y, -MaxHeightRange, MaxHeightRange);
             PlayerOneRigid.MovePosition(Pos);
+
+            // キャッチしてみる
+            if (Input.GetMouseButtonDown(0)) hold_time_1 = HoldTime;
+            if(hold_time_1 > 0) PlayerOneForceBall.StartCatch();
+            hold_time_1 -= Time.deltaTime;
         }
 
         // 1P操作
@@ -116,6 +133,11 @@ public class InputManager : MonoBehaviour
             Pos.y += add;
             Pos.y = Mathf.Clamp(Pos.y, -MaxHeightRange, MaxHeightRange);
             PlayerTwoRigid.MovePosition(Pos);
+
+            // キャッチしてみる
+            if (Input.GetMouseButton(1)) hold_time_2 = HoldTime;
+            if (hold_time_2 > 0) PlayerTwoForceBall.StartCatch();
+            hold_time_2 -= Time.deltaTime;
         }
 
     }
@@ -125,4 +147,3 @@ public class InputManager : MonoBehaviour
 //                                                                                               //
 //                                          @End of File                                         //
 //                                                                                               //
-//===============================================================================================//

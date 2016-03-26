@@ -92,7 +92,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InitBallSpeed: 8
-  AddBallSpeed: 0.5
+  AddBallSpeed: 0.001
   HitIgnoreList:
   - Trig Ball
 --- !u!135 &13519864
